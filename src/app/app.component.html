@@ -1,0 +1,16 @@
+<div role="main">
+  <div>
+    <span>{{ title }} app is running!</span>
+  </div>
+
+  <div *ngFor="let movie of movies">
+    <p>Cuantos boletos para: {{movie.name}}</p>
+    <button type="button" (click)="removeMovie(movie)" [disabled]="(movie.available<=0)">
+      -
+    </button>
+    {{movie.available}}
+    <button type="button" (click)="addMovie(movie)">
+      +
+    </button>
+  </div>
+</div>
